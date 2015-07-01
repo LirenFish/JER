@@ -16,17 +16,20 @@
 	</canvas> 
 </section>
 <aside> 
-	<img src = "bullentin.jpg" alt = "There should be a bullet board" style = "width:128px; height: 200px; float:right;"/>
-	
+	<img src = "bullentin.jpg" alt = "There should be a bullet board" style = "width:128px; height: 200px; float:right;"/>	
 </aside>
-<footer id = "f"> </footer>
+<footer id = "f"> 
+footer <br/> </footer>
 <body>
 	<script>// courseTable lay out
 	var c = document.getElementById("courseTable");
 	var box = c.getContext("2d");
-	box.fillStyle = "#000000";
+	//box.fillStyle = "#AA0000";
 	//box.fillRect(5,5,840,445);
+	// label day
+	document.getElementById("f").innerHTML += box!==day;
 	var day = c.getContext("2d");
+	day.fillStyle= "#AA0000";
 	day.font = 'italic 12pt Calibri';
 	var weekDayList = ["Monday","Tuesday","Wednesday","Thursday","Friday"];
     var ii = 0;
@@ -34,6 +37,18 @@
 		day.fillText(weekDayList[ii],i,30);
 		ii+=1;
 	}
+	// label hour
+	var hour = c.getContext("2d");
+	hour.font = '12 pt Calibri';
+	document.getElementById("f").innerHTML += "before for loop";
+	
+	var timeList = ["8:00","9:10","10:20","11:30","12:40","13:50","15:00"];
+	for( var i = 0; i < timeList.length; i++){
+		var yAxis = Number(timeList[i].split(":")[0]) +Number(timeList[i].split(":")[1]/60);
+		document.getElementById("f").innerHTML += yAxis+"<br>" ;
+		hour.fillText(timeList[i],25,50*(yAxis-8.0)+50);
+	}
+	
 	</script>
 	
 	<script> // read from database
@@ -2816,8 +2831,8 @@ Sabat�-Llobera, Nuria
 7/8	Open	
 TR 2:20 - 3:50 PM; MAIN Campus, Grant Hall , Seminar Room
 3.0	08/31/2015	12/11/2015");*/
-	document.getElementById("f").innerHTML = "Local Storage Works."}
-	else{ document.getElementById("f").innerHTML = "Switch to another broswer. Your broswer does not support Canvas"};
+	document.getElementById("f").innerHTML += "Local Storage Works."}
+	else{ document.getElementById("f").innerHTML += "Switch to another broswer. Your broswer does not support Canvas"};
 			
 	</script>
 	
