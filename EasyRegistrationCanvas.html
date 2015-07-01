@@ -11,7 +11,7 @@
 <a href="http://www.ratemyprofessors.com/search.jsp?query=centre+college"> &nbsp&nbsp Rate Centre Professors&nbsp&nbsp&nbsp</a>
 </nav>
 <section>
-	<canvas id = "courseTable" width = "800" height = "600" style = "border:1px solid #000000;float:left;">
+	<canvas id = "courseTable" width = "850" height = "455" style = "border:1px solid #000000;float:left;">
 	
 	</canvas> 
 </section>
@@ -24,8 +24,16 @@
 	<script>// courseTable lay out
 	var c = document.getElementById("courseTable");
 	var box = c.getContext("2d");
-	box.fillStyle = "#FFCCFF";
-	box.fillRect(5,5,790,590);
+	box.fillStyle = "#000000";
+	//box.fillRect(5,5,840,445);
+	var day = c.getContext("2d");
+	day.font = 'italic 12pt Calibri';
+	var weekDayList = ["Monday","Tuesday","Wednesday","Thursday","Friday"];
+    var ii = 0;
+    for (var i =150; i < 600; i = i+100){
+		day.fillText(weekDayList[ii],i,30);
+		ii+=1;
+	}
 	</script>
 	
 	<script> // read from database
