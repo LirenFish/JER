@@ -16,7 +16,7 @@
 	</canvas> 
 </section>
 <aside> 
-	<img src = "bullentin.jpg" alt = "There should be a bullet board" style = "width:128px; height: 200px; float:right;"/>	
+	<img id = "b" src = "bulletin.jpg" alt = "There should be a bullet board" style = "width:128px; height: 200px; float:right;"/>	
 </aside>
 <footer id = "f"> 
 footer <br/> </footer>
@@ -41,12 +41,17 @@ footer <br/> </footer>
 	var hour = c.getContext("2d");
 	hour.font = '12 pt Calibri';
 	document.getElementById("f").innerHTML += "before for loop";
-	
 	var timeList = ["8:00","9:10","10:20","11:30","12:40","13:50","15:00"];
 	for( var i = 0; i < timeList.length; i++){
 		var yAxis = Number(timeList[i].split(":")[0]) +Number(timeList[i].split(":")[1]/60);
 		document.getElementById("f").innerHTML += yAxis+"<br>" ;
 		hour.fillText(timeList[i],25,50*(yAxis-8.0)+50);
+	}
+	// bulletin
+	window.onload = function(){
+	var bullentin = c.getContext("2d");
+	var img = document.getElementById("b");
+	bullentin.drawImage(img,650,100,200,350);
 	}
 	
 	</script>
